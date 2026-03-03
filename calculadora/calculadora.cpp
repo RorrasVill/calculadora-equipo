@@ -7,6 +7,7 @@ double restar(double a, double b);
 double multiplicar(double a, double b);
 double dividir(double a, double b);
 double potencia(double base, double exponente);
+int modulo(int a, int b);
 double raizCuadrada(double numero);
 int main() {
 	int opcion;
@@ -46,7 +47,17 @@ int main() {
 				resultado = potencia(num1, num2);
 				cout << "Resultado: " << resultado << endl;
 				break;
-			case 6:
+			case 7:
+				int entero1, entero2;
+				cout << "Introduce el primer numero entero: ";
+				cin >> entero1;
+				cout << "Introduce el segundo numero entero: ";
+				cin >> entero2;
+				if (entero2 != 0) {
+					cout << "Resultado: " << modulo(entero1, entero2) << endl;
+				}
+				else {
+					cout << "Error: Division por cero" << endl;
 				cout << "Introduce un numero: ";
 				cin >> num1;
 				if (num1 >= 0) {
@@ -73,10 +84,11 @@ void mostrarMenu() {
 	cout << "=== CALCULADORA ===" << endl;
 	cout << "1. Sumar" << endl;
 	cout << "2. Restar" << endl;
-	cout << "3. Multiplicar" << endl; // NUEVA LÍNEA
+	cout << "3. Multiplicar" << endl; // NUEVA LÃNEA
 	cout << "4. Dividir" << endl;
 	cout << "5. Potencia (a^b)" << endl;
 	cout << "6. Raiz cuadrada" << endl;
+  cout << "7. Modulo (resto)" << endl;
 	cout << "0. Salir" << endl;
 }
 double sumar(double a, double b) {
@@ -98,6 +110,8 @@ double potencia(double base, double exponente) {
 	}
 	return resultado;
 }
+int modulo(int a, int b) {
+	return a % b;
 double raizCuadrada(double numero) {
 	if (numero == 0) return 0;
 	double estimacion = numero / 2.0;

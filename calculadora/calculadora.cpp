@@ -58,17 +58,18 @@ int main() {
 				}
 				else {
 					cout << "Error: Division por cero" << endl;
-				cout << "Introduce un numero: ";
-				cin >> num1;
-				if (num1 >= 0) {
-					resultado = raizCuadrada(num1);
-					cout << "Resultado: " << resultado << endl;
+					cout << "Introduce un numero: ";
+					cin >> num1;
+					if (num1 >= 0) {
+						resultado = raizCuadrada(num1);
+						cout << "Resultado: " << resultado << endl;
+					}
+					else {
+						cout << "Error: No se puede calcular raiz de numero negativo" <<
+							endl;
+					}
+					break;
 				}
-				else {
-					cout << "Error: No se puede calcular raiz de numero negativo" <<
-						endl;
-				}
-				break;
 			}
 			
 		}
@@ -112,6 +113,7 @@ double potencia(double base, double exponente) {
 }
 int modulo(int a, int b) {
 	return a % b;
+}
 double raizCuadrada(double numero) {
 	if (numero == 0) return 0;
 	double estimacion = numero / 2.0;
